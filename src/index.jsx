@@ -9,6 +9,8 @@ import Dashboard from './Dashboard';
 import EditData from './EditData';
 import Menu from './Menu';
 import reportWebVitals from './reportWebVitals';
+import store from './app/store';
+import { Provider } from 'react-redux';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
